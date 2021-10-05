@@ -1,9 +1,7 @@
-# Python Learning Note Application
+# Python Learning 
 
-The idea behind this project is to learn python while making a note creation app that works via the commandline :
+Made this repository to place all my Python learning projects in. Will try to update every once in a while to learn more about python and what small projects I've coded in here.
 
-## Requirements
-- The 'note' function will be used to call the application
-- You can enter a location on your system where to create the file.
-- You can enter the extension type
-- You can open a note in your default editor
+## Folders
+* CmdLine
+  * This folder contains programs that are used as commandline applications.
