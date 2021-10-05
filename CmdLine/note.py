@@ -3,18 +3,24 @@
 import os
 import argparse
 from datetime import datetime
+from typing import Dict
+
+
+def writeNote(parsed_args: Dict):
+    full_name = parsed_args.get("directory") + parsed_args.get("filename") + parsed_args.get("extension")
+    print(full_name)
 
 def read():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--directory', default=os.getcwd() , type=dir_path, help='input the file location, default is current directory') 
+    parser.add_argument('-d', '--directory', default=os.getcwd() , help='input the file location, default is current directory') 
     parser.add_argument('-f', '--filename', default=time_date() , help='file name for the note, default is timedate')
     parser.add_argument('-e', '--extension', default=".txt", help='the file extension, default is .txt')
     args = parser.parse_args()
-    print(args)
+    return vars(args)
 
 def time_date():
    now = datetime.now()
-   dt_string = now.strftime("%b-%d-%Y-%H-%M")
+   dt_string = now.strftime("%b-%d-%Y-%H:%M")
    return dt_string
 
 def dir_path(path):
@@ -24,7 +30,9 @@ def dir_path(path):
         raise argparse.ArgumentTypeError(f"readable_dir:{path} is not a valid path")
 
 def main():
-    read()
+    parsed_args = read()
+    print(type(parsed_args["directory"]))
+    writeNote(parsed_args)
 
 if __name__ == '__main__':
     main()
