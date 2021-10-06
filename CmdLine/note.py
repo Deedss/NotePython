@@ -3,12 +3,10 @@
 import os
 import argparse
 from datetime import datetime
-from typing import Dict
 
-
-def writeNote(parsed_args: Dict):
-    full_name = parsed_args.get("directory") + parsed_args.get("filename") + parsed_args.get("extension")
-    print(full_name)
+def writeNote(parsed_args):
+    full_name = parsed_args.get("directory") + "/" + parsed_args.get("filename") + parsed_args.get("extension")
+    os.system('%s %s' % (os.getenv('EDITOR'), full_name))
 
 def read():
     parser = argparse.ArgumentParser()
@@ -30,9 +28,7 @@ def dir_path(path):
         raise argparse.ArgumentTypeError(f"readable_dir:{path} is not a valid path")
 
 def main():
-    parsed_args = read()
-    print(type(parsed_args["directory"]))
-    writeNote(parsed_args)
+    writeNote(read())
 
 if __name__ == '__main__':
     main()
