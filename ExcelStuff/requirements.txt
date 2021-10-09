@@ -1,0 +1,12 @@
+This project will perform actions regarding excel sheets, json files and manipulating the data in these files.
+
+## What will the project do
+### Excel Sheets
+-- Read .CSV files into a datastructure
+-- Manipulate (sort, remove columns/row) 
+-- Export to JSON format
+
+### JSON
+-- Read JSON files into a datastructure
+-- Manipulate (sort, remove,  add)
+-- Export to .CSV
