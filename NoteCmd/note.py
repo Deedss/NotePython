@@ -3,6 +3,9 @@
 import os
 import argparse
 from datetime import datetime
+import debugpy
+debugpy.listen(46113)
+debugpy.wait_for_client()
 
 def writeNote(parsed_args):
     full_name = parsed_args.get("directory") + "/" + parsed_args.get("filename") + parsed_args.get("extension")
@@ -28,7 +31,13 @@ def dir_path(path):
         raise argparse.ArgumentTypeError(f"readable_dir:{path} is not a valid path")
 
 def main():
-    writeNote(read())
+    # writeNote(read())
+    print("Hello World")
+    print("Second Print")
+    print("Third Print")
+    x = 5
+    y = 10
+    print(x + y)
 
 if __name__ == '__main__':
     main()
