@@ -1,11 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # This will be a note taking application on the commandline written fully in Python
 import os
 import argparse
 from datetime import datetime
-import debugpy
-debugpy.listen(46113)
-debugpy.wait_for_client()
+import pdb
 
 def writeNote(parsed_args):
     full_name = parsed_args.get("directory") + "/" + parsed_args.get("filename") + parsed_args.get("extension")
@@ -13,7 +11,7 @@ def writeNote(parsed_args):
 
 def read():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--directory', default=os.getcwd() , help='input the file location, default is current directory') 
+    parser.add_argument('-d', '--directory', default=os.getcwd() , help='input the file location, default is current directory')
     parser.add_argument('-f', '--filename', default=time_date() , help='file name for the note, default is timedate')
     parser.add_argument('-e', '--extension', default=".txt", help='the file extension, default is .txt')
     args = parser.parse_args()
@@ -31,10 +29,9 @@ def dir_path(path):
         raise argparse.ArgumentTypeError(f"readable_dir:{path} is not a valid path")
 
 def main():
-    # writeNote(read())
     print("Hello World")
-    print("Second Print")
-    print("Third Print")
+    # writeNote(read())
+    breakpoint()
     x = 5
     y = 10
     print(x + y)
