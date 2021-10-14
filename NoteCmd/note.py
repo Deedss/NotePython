@@ -31,10 +31,10 @@ def dir_path(path):
 def main():
     print("Hello World")
     # writeNote(read())
-    breakpoint()
     x = 5
     y = 10
     print(x + y)
+    print(x - y)
 
 if __name__ == '__main__':
     main()
