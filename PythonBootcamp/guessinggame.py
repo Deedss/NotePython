@@ -4,32 +4,33 @@ num = randint(1,101)
 
 guesses = []
 
-print("Make a guess between 1 and 100!")
-
-
 while True:
-
-    guess = int(input('guess: '))
+     # we can copy the code from above to take an input
+    guess = int(input("I'm thinking of a number between 1 and 100.\n  What is your guess? "))
 
     if guess < 1 or guess > 100:
-        print("OUT OF BOUNDS")
+        print('OUT OF BOUNDS! Please try again: ')
         continue
 
-    guesses.append(guess)
-
-    if guesses[-1] == num:
-        print('You have guessed it')
+    # here we compare the player's guess to our number
+    if guess == num:
+        print(f'CONGRATULATIONS, YOU GUESSED IT IN ONLY {len(guesses)} GUESSES!!')
         break
 
-    if(len(guesses) <= 1):
-        if abs(guesses[-1] - num) < 10:
-            print("WARM")
+    # if guess is incorrect, add guess to the list
+    guesses.append(guess)
+
+    # when testing the first guess, guesses[-2]==0, which evaluates to False
+    # and brings us down to the second section
+
+    if guesses[-2]:
+        if abs(num-guess) < abs(num-guesses[-2]):
+            print('WARMER!')
         else:
-            print("COLD")
+            print('COLDER!')
+
     else:
-        if abs(guesses[-1] - num) < abs(guesses[-2] - num):
-            print("WARMER")
+        if abs(num-guess) <= 10:
+            print('WARM!')
         else:
-            print("COLDER")
-
-
+            print('COLD!')
