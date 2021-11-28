@@ -1,0 +1,3 @@
+[submodule "Complete-Python-3-Bootcamp"]
+	path = Complete-Python-3-Bootcamp
+	url = git@github.com:Pierian-Data/Complete-Python-3-Bootcamp.git
