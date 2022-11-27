@@ -1,0 +1,35 @@
+[
+    {
+        "command": "version", 
+        "help": "Get the version of the firwmare",
+        "options": [],
+        "type": "generic"
+    },
+    {
+        "command": "gpio read",
+        "help": "Read on/off from a GPIO pin",
+        "options": [
+            "on",
+            "off"
+        ],
+        "type": "gpio"
+    },
+    {
+        "command": "gpio write",
+        "help": "Write on/off to a GPIO pin",
+        "options": [
+            "on",
+            "off"
+        ],
+        "type": "gpio"
+    },
+    {
+        "command": "gpio toggle",
+        "help": "Toggle a GPIO pin on/off",
+        "options": [
+            "on",
+            "off"
+        ],
+        "type": "gpio"
+    }
+]

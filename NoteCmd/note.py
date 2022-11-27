@@ -10,14 +10,15 @@ def writeNote(parsed_args):
         "directory") + "/" + parsed_args.get("filename") + parsed_args.get("extension")
     os.system('%s %s' % (os.getenv('EDITOR'), full_name))
 
+
 def read():
     parser = argparse.ArgumentParser()
     parser.add_argument('-d', '--directory', default=os.getcwd(),
-        help='input the file location, default is current directory')
+                        help='input the file location, default is current directory')
     parser.add_argument('-f', '--filename', default=time_date(),
-        help='file name for the note, default is timedate')
+                        help='file name for the note, default is timedate')
     parser.add_argument('-e', '--extension', default=".txt",
-        help='the file extension, default is .txt')
+                        help='the file extension, default is .txt')
     args = parser.parse_args()
     return vars(args)
 
@@ -27,16 +28,16 @@ def time_date():
     dt_string = now.strftime("%b-%d-%Y-%H:%M")
     return dt_string
 
+
 def dir_path(path):
     if os.path.isdir(path):
         return path
     else:
         raise argparse.ArgumentTypeError("readable_dir:{path} is not a valid path")
 
+
 def main():
     print("Hello World")
-    writeNote(read())
-    import pdb; pdb.set_trace()
     x = 5
     y = 10
     temp = [1, 2, 3, 4, 5]
